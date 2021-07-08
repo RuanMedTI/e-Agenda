@@ -1,0 +1,12 @@
+﻿-- Script Date: 05/07/2021 16:32  - ErikEJ.SqlCeScripting version 3.5.2.87
+CREATE TABLE [TBCOMPROMISSO] (
+  [Id] INTEGER NOT NULL
+, [Local] TEXT NOT NULL
+, [Data] TEXT NOT NULL
+, [HoraInicio] TEXT NOT NULL
+, [HoraTermino] TEXT NOT NULL
+, [Link] TEXT NOT NULL
+, [Assunto] TEXT NOT NULL
+, [Id_Contato] INTEGER NOT NULL
+, CONSTRAINT [PK_TBCOMPROMISSO] PRIMARY KEY ([Id])
+);

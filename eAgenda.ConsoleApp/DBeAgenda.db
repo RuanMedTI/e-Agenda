@@ -1,0 +1,47 @@
+-- Script Date: 08/07/2021 13:52  - ErikEJ.SqlCeScripting version 3.5.2.87
+-- Database information:
+-- Database: F:\App\Visual Studio Repos\e-Agenda-master\Agenda.db
+-- ServerVersion: 3.32.1
+-- DatabaseSize: 16 KB
+-- Created: 05/07/2021 23:19
+
+-- User Table information:
+-- Number of tables: 3
+-- TBCOMPROMISSO: -1 row(s)
+-- TBCONTATO: -1 row(s)
+-- TBTAREFA: -1 row(s)
+
+SELECT 1;
+PRAGMA foreign_keys=OFF;
+BEGIN TRANSACTION;
+CREATE TABLE [TBTAREFA] (
+  [Id] INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL
+, [Titulo] text NOT NULL
+, [DataCriacao] text NOT NULL
+, [DataConclusao] text NULL
+, [Prioridade] bigint NOT NULL
+, [Percentual] bigint NOT NULL
+);
+CREATE TABLE [TBCONTATO] (
+  [Id] INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL
+, [Nome] text NOT NULL
+, [Email] text NOT NULL
+, [Telefone] text NOT NULL
+, [Cargo] text NULL
+, [Empresa] text NULL
+);
+CREATE TABLE [TBCOMPROMISSO] (
+  [Id] INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL
+, [Local] text NULL
+, [Data] numeric(53,0) NOT NULL
+, [HoraInicio] bigint NOT NULL
+, [HoraTermino] bigint NOT NULL
+, [Link] text NULL
+, [Assunto] text NULL
+, [Id_Contato] bigint NULL
+, CONSTRAINT [FK_TBCOMPROMISSO_0_0] FOREIGN KEY ([Id_Contato]) REFERENCES [TBCONTATO] ([Id]) ON DELETE NO ACTION ON UPDATE NO ACTION
+);
+CREATE TRIGGER [fki_TBCOMPROMISSO_Id_Contato_TBCONTATO_Id] BEFORE Insert ON [TBCOMPROMISSO] FOR EACH ROW BEGIN SELECT RAISE(ROLLBACK, 'Insert on table TBCOMPROMISSO violates foreign key constraint FK_TBCOMPROMISSO_0_0') WHERE NEW.Id_Contato IS NOT NULL AND(SELECT Id FROM TBCONTATO WHERE  Id = NEW.Id_Contato) IS NULL; END;
+CREATE TRIGGER [fku_TBCOMPROMISSO_Id_Contato_TBCONTATO_Id] BEFORE Update ON [TBCOMPROMISSO] FOR EACH ROW BEGIN SELECT RAISE(ROLLBACK, 'Update on table TBCOMPROMISSO violates foreign key constraint FK_TBCOMPROMISSO_0_0') WHERE NEW.Id_Contato IS NOT NULL AND(SELECT Id FROM TBCONTATO WHERE  Id = NEW.Id_Contato) IS NULL; END;
+COMMIT;
+
