@@ -59,6 +59,6 @@
     <Folder Include="Scripts\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Scripts\ScriptsIgnoredOnImport.sql" />
+    <None Include="Agenda.db" />
   </ItemGroup>
 </Project>

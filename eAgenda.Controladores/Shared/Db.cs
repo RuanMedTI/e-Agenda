@@ -22,7 +22,7 @@ namespace eAgenda.Controladores.Shared
 
         public static int Insert(string sql, Dictionary<string, object> parameters)
         {
-            if (bancoEscolhido.Equals("Agenda"))
+            if (bancoEscolhido.Equals("dbeagendalite"))
             {
                 SQLiteConnection connection = new SQLiteConnection(connectionString);
                 SQLiteCommand command = new SQLiteCommand(sql.AppendSelectIdentityLite(), connection);
@@ -46,7 +46,7 @@ namespace eAgenda.Controladores.Shared
 
         public static void Update(string sql, Dictionary<string, object> parameters = null)
         {
-            if (connectionString.Contains(bancoEscolhido))
+            if (bancoEscolhido.Equals("dbeagendalite"))
             {
                 SQLiteConnection connection = new SQLiteConnection(connectionString);
                 SQLiteCommand command = new SQLiteCommand(sql, connection);
@@ -73,7 +73,7 @@ namespace eAgenda.Controladores.Shared
 
         public static List<T> GetAll<T>(string sql, ConverterDelegate<T> convert, Dictionary<string, object> parameters = null)
         {
-            if (connectionString.Contains(bancoEscolhido))
+            if (bancoEscolhido.Equals("dbeagendalite"))
             {
                 SQLiteConnection connection = new SQLiteConnection(connectionString);
                 SQLiteCommand command = new SQLiteCommand(sql, connection);
@@ -109,7 +109,7 @@ namespace eAgenda.Controladores.Shared
 
         public static T Get<T>(string sql, ConverterDelegate<T> convert, Dictionary<string, object> parameters)
         {
-            if (connectionString.Contains(bancoEscolhido))
+            if (bancoEscolhido.Equals("dbeagendalite"))
             {
                 SQLiteConnection connection = new SQLiteConnection(connectionString);
                 SQLiteCommand command = new SQLiteCommand(sql, connection);
@@ -139,7 +139,7 @@ namespace eAgenda.Controladores.Shared
 
         public static bool Exists(string sql, Dictionary<string, object> parameters)
         {
-            if (connectionString.Contains(bancoEscolhido))
+            if (bancoEscolhido.Equals("dbeagendalite"))
             {
                 SQLiteConnection connection = new SQLiteConnection(connectionString);
                 SQLiteCommand command = new SQLiteCommand(sql, connection);
