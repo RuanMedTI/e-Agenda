@@ -20,18 +20,21 @@ namespace eAgenda
         private void btnCompromissos_Click(object sender, EventArgs e)
         {
             Form2 form = new Form2();
+            MessageBox.Show("Não esqueça de utilizar os botões de Liberar Campos para funcionamento do código :)");
             form.Visible = true;
         }
 
         private void btnContatos_Click(object sender, EventArgs e)
         {
             Form3 form = new Form3();
+            MessageBox.Show("Não esqueça de utilizar os botões de Liberar Campos para funcionamento do código :)");
             form.Visible = true;
         }
 
         private void btnTarefas_Click(object sender, EventArgs e)
         {
             Form4 form = new Form4();
+            MessageBox.Show("Não esqueça de utilizar os botões de Liberar Campos para funcionamento do código :)");
             form.Visible = true;
         }
 

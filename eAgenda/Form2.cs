@@ -27,6 +27,7 @@ namespace eAgenda
             contatos = controladorContato.SelecionarTodos();
 
             CarregarCompromissos();
+            PopulandoComboBoxContatos();
         }
 
         private void InserirNovoCompromisso()
@@ -71,8 +72,6 @@ namespace eAgenda
                 camposBanco["Contato"] = (compromisso.Contato != null) ? compromisso.Contato.Nome : null;
 
                 dtCompromissos.Rows.Add(camposBanco);
-
-                PopulandoComboBoxContatos();
             }
         }
 
