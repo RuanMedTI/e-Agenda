@@ -21,6 +21,8 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "eAgendaTest.Database", "eAg
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "eAgendaLite.Database", "eAgendaLite.Database\eAgendaLite.Database.sqlproj", "{E27C746E-63F5-4887-B884-EF7AF75898A6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eAgenda", "eAgenda\eAgenda.csproj", "{DEEBFEB4-A878-4DFC-A266-05F20C81EAF0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +63,10 @@ Global
 		{E27C746E-63F5-4887-B884-EF7AF75898A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E27C746E-63F5-4887-B884-EF7AF75898A6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E27C746E-63F5-4887-B884-EF7AF75898A6}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{DEEBFEB4-A878-4DFC-A266-05F20C81EAF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEEBFEB4-A878-4DFC-A266-05F20C81EAF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEEBFEB4-A878-4DFC-A266-05F20C81EAF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEEBFEB4-A878-4DFC-A266-05F20C81EAF0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
