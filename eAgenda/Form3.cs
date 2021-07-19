@@ -76,7 +76,7 @@ namespace eAgenda
         {
             int id = Convert.ToInt32(txtId.Text);
 
-            Contato contato = new Contato(txtNome.Text, txtEmail.Text, txtTelefone.Text, 
+            Contato contato = new Contato(txtNome.Text, txtEmail.Text, txtTelefone.Text,
                 txtEmpresa.Text, txtCargo.Text);
 
             controlador.Editar(id, contato);
@@ -88,7 +88,7 @@ namespace eAgenda
 
         private void ExcluirContato()
         {
-            
+
             int id = Convert.ToInt32(txtId.Text);
 
             controlador.Excluir(id);
@@ -153,6 +153,14 @@ namespace eAgenda
             txtEmpresa.ReadOnly = false;
             txtCargo.ReadOnly = false;
             txtTelefone.ReadOnly = false;
+        }
+
+        private void txtTelefone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar >= '0' && e.KeyChar <= '9') return;
+            if (e.KeyChar == '+' || e.KeyChar == '-') return;
+            if (e.KeyChar == 8) return;
+            e.Handled = true;
         }
     }
 }

@@ -58,7 +58,6 @@ namespace eAgenda
             this.txtCargo = new System.Windows.Forms.TextBox();
             this.txtEmpresa = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtTelefone = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -69,6 +68,7 @@ namespace eAgenda
             this.btnLiberarExcluir = new System.Windows.Forms.Button();
             this.btnLiberarEdit = new System.Windows.Forms.Button();
             this.btnLiberarInsert = new System.Windows.Forms.Button();
+            this.txtTelefone = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -262,12 +262,12 @@ namespace eAgenda
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txtTelefone);
             this.groupBox2.Controls.Add(this.txtId);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.txtCargo);
             this.groupBox2.Controls.Add(this.txtEmpresa);
             this.groupBox2.Controls.Add(this.txtEmail);
-            this.groupBox2.Controls.Add(this.txtTelefone);
             this.groupBox2.Controls.Add(this.txtNome);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label5);
@@ -317,13 +317,6 @@ namespace eAgenda
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(370, 20);
             this.txtEmail.TabIndex = 7;
-            // 
-            // txtTelefone
-            // 
-            this.txtTelefone.Location = new System.Drawing.Point(509, 63);
-            this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(116, 20);
-            this.txtTelefone.TabIndex = 6;
             // 
             // txtNome
             // 
@@ -419,6 +412,14 @@ namespace eAgenda
             this.btnLiberarInsert.UseVisualStyleBackColor = true;
             this.btnLiberarInsert.Click += new System.EventHandler(this.btnLiberarInsert_Click);
             // 
+            // txtTelefone
+            // 
+            this.txtTelefone.Location = new System.Drawing.Point(504, 63);
+            this.txtTelefone.Name = "txtTelefone";
+            this.txtTelefone.Size = new System.Drawing.Size(121, 20);
+            this.txtTelefone.TabIndex = 12;
+            this.txtTelefone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefone_KeyPress);
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -459,7 +460,6 @@ namespace eAgenda
         private System.Windows.Forms.TextBox txtCargo;
         private System.Windows.Forms.TextBox txtEmpresa;
         private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.TextBox txtTelefone;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -488,5 +488,6 @@ namespace eAgenda
         private System.Windows.Forms.Button btnLiberarExcluir;
         private System.Windows.Forms.Button btnLiberarEdit;
         private System.Windows.Forms.Button btnLiberarInsert;
+        private System.Windows.Forms.TextBox txtTelefone;
     }
 }
